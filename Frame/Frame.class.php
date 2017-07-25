@@ -25,9 +25,6 @@ final class Frame
     private static function initConfig()
     {
         $GLOBALS['config']=require_once(APP_PATH.'Conf'.DS.'Config.php');
-        echo "<pre>";
-        echo "</pre>";
-//        print_r($GLOBALS);
     }
 
     private static function initRoute()
@@ -55,6 +52,8 @@ final class Frame
             $filename=ROOT_PATH.str_replace("\\",DS,$className).".class.php";//转换目录下的斜线
 //            echo $filename;
             if(file_exists($filename)) {require_once ($filename);};
+            echo "<pre>";
+            echo $filename;
         });
 
     }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../0718/.idea/0718.iml" filepath="$PROJECT_DIR$/../0718/.idea/0718.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../teacher_blog/Blog5/.idea/Blog5.iml" filepath="$PROJECT_DIR$/../teacher_blog/Blog5/.idea/Blog5.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/blog.iml" filepath="$PROJECT_DIR$/.idea/blog.iml" />
       <module fileurl="file://D:/mylaravel/MyLaravel/php/.idea/php.iml" filepath="D:/mylaravel/MyLaravel/php/.idea/php.iml" />
     </modules>

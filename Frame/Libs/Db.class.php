@@ -29,10 +29,10 @@ final class Db
 
     private function __clone()
     {
-        // TODO: Implement __clone() method.
+//
     }
 
-    private static function getInstance()
+    public static function getInstance()
     {
         if (!self::$obj instanceof self) {
             self::$obj = new self();
@@ -44,14 +44,14 @@ final class Db
     private function f_mysql_connect()
     {
 
-        if (!mysql_connect("127.0.0.1", "root", "root")) {
+        if (@!mysql_connect($this->db_host, $this->db_user, $this->db_pass)) {
             die("数据库连接失败");
         }
     }
 
     private function f_mysql_select()
     {
-        if (!mysql_select_db("itcast")) {
+        if (@!mysql_select_db("itcast")) {
             exit("数据库选择失败");
         };
 
@@ -119,6 +119,6 @@ final class Db
 
     public function __destruct()
     {
-        mysqli_close();
+        mysql_close();
     }
 }
