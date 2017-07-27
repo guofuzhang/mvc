@@ -1,12 +1,11 @@
 <?php
-//(0)Home应用常量定义
-define("DS",DIRECTORY_SEPARATOR);//斜线(/、\)，根据操作系统决定
-define("ROOT_PATH",getcwd().DS);//网站根目录
-define("APP_PATH",ROOT_PATH."Home".DS);//平台目录
-//(1)包含核心框架类文件
-//echo ROOT_PATH."Frame".DS."Frame.class.php";
-require(ROOT_PATH."Frame".DS."Frame.class.php");
-//(2)框架初始化
-\Frame\Frame::run()
-//$obj=new Home\Controller\StudentController();
-?>
+//******************前端的入口文件************************
+//(0)常用常量的设置
+define("DS",DIRECTORY_SEPARATOR);//目录分割符、动态的
+define("ROOT_PATH",getcwd()); //网站根目录
+define("APP_PATH",ROOT_PATH.DS."Home".DS);//完整路径：./Home/
+
+//(1)包含框架初始类文件
+require_once(ROOT_PATH.DS."Frame".DS."Frame.class.php");
+//(2)调用初始化框架类的方法
+\Frame\Frame::run();
