@@ -7,6 +7,6 @@ define("APP_PATH",ROOT_PATH."Home".DS);//平台目录
 //echo ROOT_PATH."Frame".DS."Frame.class.php";
 require(ROOT_PATH."Frame".DS."Frame.class.php");
 //(2)框架初始化
-\Frame\Frame::run();
+\Frame\Frame::run()
 //$obj=new Home\Controller\StudentController();
 ?>

@@ -1,1 +1,2 @@
 git@github.com:guofuzhang/MVC0718.git
+git@githup.com:guofuzhang/MVC0718.git

@@ -2,6 +2,9 @@
 //声明命名空间
 namespace Frame;
 //框架初始类文件
+use Frame\Libs\Db;
+use Illuminate\Routing\Controller;
+
 final class Frame
 {
     public static function run()
@@ -43,6 +46,7 @@ final class Frame
     private static function initConst()
     {
         define("VIEW_PATH",APP_PATH.'View'.DS.CONTROLLER.DS);
+        define("FRAME_PATH",ROOT_PATH.DS.'Frame'.DS);
     }
 
     public static function initAutoLoad()
@@ -63,11 +67,13 @@ final class Frame
         //构建控制器类名：\Home\Controller\NewsController()
         $c = "\\".PLAT.DS."Controller".DS.CONTROLLER . "Controller";
         //创建控制器类对象
-        $controllerObj = new $c();
+        $ctr= new $c();
         //调用控制器对象的方法
         $a = ACTION;
-        $controllerObj->$a();
+        $ctr->$a();
     }
+
+
 
 
 }

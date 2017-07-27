@@ -6,7 +6,7 @@
  * Time: 12:15
  */
 //该类创建一个db对象
-namespace Home\Model;
+namespace Admin\Model;
 use \Frame\Libs\Db;
 
 final class IndexModel
@@ -23,6 +23,12 @@ final class IndexModel
     {
         $sql="select * from student ORDER BY id DESC limit 5 ";
         return $this->db->fetchAll($sql);
+    }
+
+    public function delete($id)
+    {
+        $sql="delete * from student where id=$id";
+        return $this->exec($sql);
     }
 
 }

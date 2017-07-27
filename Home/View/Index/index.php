@@ -16,24 +16,27 @@
     <th>奖金</th>
     <th>籍贯</th>
     <th>操作</th>
-    <?php  foreach ($arr as $value){
-
-
-    ?>
+    <{foreach $arr as $v}>
     <tr style="height: 50px">
-        <td><?php echo $value['id']?></td>
-        <td><?php echo $value['name']?></td>
-        <td><?php echo $value['sex']?></td>
-        <td><?php echo $value['age']?></td>
-        <td><?php echo $value['edu']?></td>
-        <td><?php echo $value['salary']?></td>
-        <td><?php echo $value['bonus']?></td>
-        <td><?php echo $value['city']?></td>
-        <td><a href="">修改</a>|<a style="color: red" href="">删除</a></td>
+        <td><{$v['id']}></td>
+        <td><{$v['name']}></td>
+        <td><{$v['sex']}></td>
+        <td><{$v['age']}></td>
+        <td><{$v['edu']}></td>
+        <td><{$v['salary']}></td>
+        <td><{$v['bonus']}></td>
+        <td><{$v['city']}></td>
+        <td><a href="javascript:void (0)" onclick="confirmedit(<{$v['id']}>)">修改</a>|<a style="color: red" href="javascript:void (0)" onclick="confirmdel(<{$v['id']}>)">删除</a></td>
 
     </tr>
-    <?php } ?>
+<{/foreach}>
 </table>
-
+<script>
+confirmdel(id){
+    if(window.confirm("您确定删除吗")){
+        location.href="?c=index&a=delete&id="+id
+    }
+}
+</script>
 </body>
 </html>

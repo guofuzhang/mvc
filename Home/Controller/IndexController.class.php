@@ -6,14 +6,33 @@
  * Time: 23:20
  */
 namespace Home\Controller;
+use Frame\Libs\baseController;
 use Home\Model\IndexModel;
-final class IndexController{
+
+//    定义首页控制器类
+//控制器下的方法
+final class IndexController extends baseController {
 //    定义首页控制器类
 //控制器下的方法
     public function index()
     {
-        $IndexObj=new IndexModel();
-       $arr=$IndexObj->fetchALL();
-       include VIEW_PATH.DS."index.php";
-}
+        $IndexObj=IndexModel::getinstance();
+        $arr=$IndexObj->fetchALL();
+        include VIEW_PATH.DS."index.php";
+        $this->smarty->assign("arr",$arr);
+        $this->smarty->display("index.html");
+    }
+
+    public function delete()
+    {
+        $id=$_GET['id'];
+        $modelObj=IndexModel::getinstance();
+        $modelObj->delete($id);
+        $this->jump("已经删除","?",3);
+    }
+    protected  function  jump($msg,$url,$time){
+        echo "$msg";
+        header("refresh:$time;url=$url");
+    }
+
 }
